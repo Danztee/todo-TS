@@ -1,6 +1,7 @@
 import Todos from "./components/Todos";
-import Todo from "./models/todo";
+// import Todo from "./models/todo";
 import NewTodo from "./components/NewTodo";
+import TodosContextProvider from "./store/todos-context";
 // import { useState } from "react";
 
 function App() {
@@ -23,10 +24,13 @@ function App() {
   // };
 
   return (
-    <div className="App">
+    <TodosContextProvider>
       {/* <NewTodo onAddTodo={addTodoHandler} />
       <Todos items={todos} onRemoveTodo={removeTodoHandler} /> */}
-    </div>
+
+      <NewTodo />
+      <Todos />
+    </TodosContextProvider>
   );
 }
 
